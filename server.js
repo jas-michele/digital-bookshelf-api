@@ -14,6 +14,8 @@ app.use("/", bookRoutes);
 
 app.get("/", bookRoutes);
 
+app.patch("/", bookRoutes);
+
 
 
 

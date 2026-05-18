@@ -41,4 +41,18 @@ router.get("/book/:id", async (req, res) => {
     }
 });
 
+router.patch("/update/:id", async (req, res) => {
+    try {
+        const response = await Book.findByIdAndUpdate(req.params.id, req.body, {returnDocument: 'after'});
+
+        res.json(response);
+    } catch (error) {
+        console.error("Error updating")
+
+        res.status(500).json({
+            error: error.message
+        })
+    }
+})
+
 module.exports = router;
