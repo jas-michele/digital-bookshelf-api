@@ -16,7 +16,7 @@ app.get("/", bookRoutes);
 
 app.patch("/", bookRoutes);
 
-
+app.delete("/", bookRoutes);
 
 
 app.listen(PORT, () => {
