@@ -24,10 +24,21 @@ router.get("/bookshelf", async (req, res) => {
         res.json(result);
     } catch (error) {
         console.error("Error loading books", error);
-    }
-    
-}
+    }  
+});
 
-)
+router.get("/book/:id", async (req, res) => {
+    try {
+        const response = await Book.findById(req.params.id);
+
+        res.json(response);
+    } catch (error) {
+        console.error("Error finding book")
+
+        res.status(500).json({
+            error: error.message
+        });
+    }
+});
 
 module.exports = router;
