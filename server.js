@@ -12,6 +12,8 @@ app.use(express.json());
 
 app.use("/", bookRoutes);
 
+app.get("/", bookRoutes);
+
 
 
 

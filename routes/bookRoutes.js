@@ -13,8 +13,19 @@ router.post("/new", async (req, res) => {
         res.status(400).json({
             error: error.message
         });
-
     }
+}
+)
+
+router.get("/bookshelf", async (req, res) => {
+    try {
+        const result = await Book.find({});
+
+        res.json(result);
+    } catch (error) {
+        console.error("Error loading books", error);
+    }
+    
 }
 
 )
